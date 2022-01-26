@@ -13,11 +13,12 @@
     //cuántos tienen notas mayores o iguales a 7 y cuántos menores
 
     var x = 0; 
-        var num1 = 0;
-        var num2 = 0;
+    var num1 = 0;
+    var num2 = 0;
+      
         while (x < 10) {
             var nota;
-            nota = Number((prompt("Introduzca las notas")));
+            nota = Number((prompt("Introduzca las 10 notas")));
             if (nota >= 7) {
                 num1 = num1 + 1;
             } else {
@@ -25,9 +26,9 @@
             }
             x = x + 1;
         }
-        document.write(" Cantidad de alumnos con notas mayores o iguales a 7: " + num1);
+        document.write(" El numero de alumnos con notas mayores o iguales a 7: " + num1);
         document.write("<br>");
-        document.write(" Cantidad de alumnos con notas menores a 7: " + num2);
+        document.write(" El numero de alumnos con notas menores a 7: " + num2);
 
     </script>
 </body>
