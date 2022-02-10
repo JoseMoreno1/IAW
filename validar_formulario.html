@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 9: Validacion de formulario</title>
+</head>
+
+<body>
+    
+<link href="estilo_form.css"  rel="stylesheet" type="text/css">
+    <form>
+        <label for="lbl_nombre">Nombre:</label>
+        <input type="text" id="txt_nombre" required> <br>
+
+        <label for="lbl_apellidos">Apellidos:</label>
+        <input type="text" id="txt_apellidos" required> <br>
+
+        <label for="lbl_email">Email:</label>
+        <input type="text" id="txt_email" required> <br>
+
+        <input type="radio" name="radio_eleccion" value="1" id="Mujer">
+        <label for="lbl_radio">Mujer</label> <br>
+
+        <input type="radio" name="radio_eleccion" value="2" id="Hombre">
+        <label for="lbl_radio">Hombre</label>  <br>
+
+        <label for="lbl_textarea">Escribe aqui tu mensaje</label>
+        <textarea id="txt_area" placeholder="..Mensaje aqui.." id="area"></textarea>  <br>
+        
+        <input type="checkbox" id="chk">
+        <label for="lbl_check">Deseo recibir publicidad en mi canal</label>  <br>
+
+        <label for="lbl_pais">Procedencia</label>
+        <select id="sel_pais" required>
+            <optgroup label="Europa">
+                <option value="es">Resto de la Union Europea</option>
+                <option value="es">España</option>
+                <option value="es">Reino Unido</option>
+            </optgroup>
+
+            <optgroup label="Resto del mundo">
+                <option value="es">Ameria</option>
+                <option value="es">Asia</option>
+                <option value="es">Africa</option>
+                <option value="es">Oceania</option>
+            </optgroup> 
+            
+        </select>
+
+            <label for="lbl_archivo">Adjuntar archivo</label> 
+            <input type="file" id="btn_archivo" value="Seleccionar archivo"> <br>
+
+
+            <input type="submit" id="btn_enviar" value="Enviar" onclick="Verificar()">
+            <input type="reset" id="btn_reset" value="Borrar datos">
+    </form> 
+
+    <script>
+        function Verificar() {
+
+            /*Verificar Nombre*/
+            var nombre = document.getElementById('txt_nombre').value;
+                if (nombre == 0) {
+                    alert ("No has puesto nombre");
+                    return false;
+                }
+
+            /*Verficar apellidos*/
+            var apellidos = document.getElementById('txt_apellidos').value;
+                if (apellidos == 0) {
+                    alert ("No has puesto apellidos");
+                    return false;
+                }                                                      
+
+            /*Verificar email*/
+            var email = document.getElementById('txt_email').value;
+    
+                if(!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(email)) ) {
+                    alert ("No has puesto bien el correo");
+                    return false;
+                }
+            
+        }
+
+
+
+
+        
+
+    </script>
+</body>
+</html>
